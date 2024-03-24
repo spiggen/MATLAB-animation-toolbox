@@ -22,15 +22,8 @@ V = VideoWriter(filename, "MPEG-4");
 open(V);
 %V.FileFormat = "mp4";
 
-self = animation(@(c) eachframe(c{1}), {0}, {1}, "KeyFrames", "all");
+self = animation(@(c) writeVideo(V, frame2im(getframe(ax))), {0}, {1}, "KeyFrames", "all");
 
-    function eachframe(index)
-        if floor(index)
-        close(V)
-        else
-        %frame = getframe(ax);
-        writeVideo(V, frame2im(getframe(ax)));
-        end
-        end
+
 
 end

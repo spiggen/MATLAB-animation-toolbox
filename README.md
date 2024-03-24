@@ -31,6 +31,7 @@ The animation-routine is then going to interpolate between the initial
 argument-values and the end argument-values to get a smooth animation
 sequence.
 
+![](methods/documentation.gif)
 
 It is also possible to change to change which keyframes the animation is
 active for.
@@ -55,6 +56,8 @@ my_anim = animation(@(args)my_fun(args{1},   args{2}), ...
                                   "KeyFrames", [50,200], ...
                                   "KeyRates", [0, 1/(200-50)]  ); % rates of change at beginning and end of clip.
 ```
+![](methods/documentation2.gif)
+
 <h2>animate()</h2>
 animate() is a routine takes in a list of animations to be rendered, and
 renders them on top of each-other for each frame, allowing you to write 
@@ -91,6 +94,10 @@ animate({my_anim}, [0,50,3,0.2]); % Renders the animation for each time the keyf
 
 ```
 
+![](methods/documentation.gif)
+![](methods/documentation3.gif)
+![](methods/documentation4.gif)
+
 <h2>save_animation()</h2>
 
 
@@ -121,3 +128,10 @@ n_characters() takes in a list of strings, where each string represents one
 row of text, and a double n (that will be rounded to nearest integer).
 The out_array will then contain the first n'th characters.
 
+
+
+<h2>Examples:</h2>
+
+![](methods/documentation.gif)
+![](methods/documentation.gif)
+![](methods/documentation.gif)
