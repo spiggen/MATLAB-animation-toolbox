@@ -131,7 +131,10 @@ The out_array will then contain the first n'th characters.
 
 
 <h2>Examples:</h2>
+(Only gifs as markdown wont show mp4's.)
 
-![](methods/documentation.gif)
-![](methods/documentation.gif)
-![](methods/documentation.gif)
+![](methods/newtons_convergence.gif)
+![](methods/cursed.gif)
+![](methods/flower.gif)
+![](methods/axel.gif)
+
