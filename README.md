@@ -32,6 +32,29 @@ argument-values and the end argument-values to get a smooth animation
 sequence.
 
 
+It is also possible to change to change which keyframes the animation is
+active for.
+
+```MATLAB:Code
+
+my_anim = animation(@(args)my_fun(args{1},   args{2}), ... 
+                                 {0:0.1:10, sin(0:0.1:10)}, ... 
+                                 {0:0.2:20, cos(0:0.2:20)}, ...
+                                  "KeyFrames", [50,200]);          % Keyframes at which the animation starts displaying and stops displaying. 
+
+```
+As well as the rate of change of the animation at the beginning and end
+note though that this is not normalised against the length of the clip, 
+but rather against the length of a frame. Thus, to make the clip end with 
+the same velocity as it has in the middle of the clip, one would do the
+following:
+```MATLAB:Code
+my_anim = animation(@(args)my_fun(args{1},   args{2}), ... 
+                                 {0:0.1:10, sin(0:0.1:10)}, ... 
+                                 {0:0.2:20, cos(0:0.2:20)}, ...
+                                  "KeyFrames", [50,200], ...
+                                  "KeyRates", [0, 1/(200-50)]  ); % rates of change at beginning and end of clip.
+```
 <h2>animate()</h2>
 animate() is a routine takes in a list of animations to be rendered, and
 renders them on top of each-other for each frame, allowing you to write 
